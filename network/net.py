@@ -16,7 +16,7 @@ class Recurrent(nn.Module):
                           hidden_size=hidden_dim,
                           num_layers=layer_dim,
                           batch_first=True,
-                          nonlinearity='relu')
+                          nonlinearity='tanh')
         self.fc = nn.Linear(in_features=hidden_dim,out_features=out_dim)
 
     def forward(self, x):
