@@ -12,12 +12,12 @@ python run.py
 
 ### Recurrent (ReLU Activation, One Layer)
 ```text
-Iteration: 500 Loss: 0.051108330488204956 Accuracy 96.64
-Iteration: 1000 Loss: 0.030475890263915062 Accuracy 98.03
-Iteration: 1500 Loss: 0.034845031797885895 Accuracy 98.19
-Iteration: 2000 Loss: 0.017082372680306435 Accuracy 98.27
-Iteration: 2500 Loss: 0.014983654022216797 Accuracy 98.64
-Iteration: 3000 Loss: 0.003198744961991906 Accuracy 98.67
+Iteration: 500 Loss: 1.3418495655059814 Accuracy 40.13
+Iteration: 1000 Loss: 0.7700706720352173 Accuracy 62.19
+Iteration: 1500 Loss: 1.1213867664337158 Accuracy 81.23
+Iteration: 2000 Loss: 0.7049544453620911 Accuracy 86.21
+Iteration: 2500 Loss: 0.3671818673610687 Accuracy 88.78
+Iteration: 3000 Loss: 0.3177652060985565 Accuracy 92.23
 ```
 
 
