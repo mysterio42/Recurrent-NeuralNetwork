@@ -20,7 +20,7 @@ Iteration: 2500 Loss: 0.3671818673610687 Accuracy 88.78
 Iteration: 3000 Loss: 0.3177652060985565 Accuracy 92.23
 ```
 
-### Recurrent (ReLU Activation, One Layer)
+### Recurrent (ReLU Activation, Two Layer)
 ```text
 Iteration: 500 Loss: 0.9008259773254395 Accuracy 62.98
 Iteration: 1000 Loss: 0.5199368000030518 Accuracy 78.67
