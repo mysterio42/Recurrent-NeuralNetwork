@@ -47,7 +47,7 @@ Iteration: 5500 Loss: 0.15809383988380432 Accuracy 96.23
 Iteration: 6000 Loss: 0.30511119961738586 Accuracy 97.62
 ```
 
-### Recurrent (ReLU Activation, Two Layer,10 epochs, 6000 iteration)
+### Recurrent (Tanh Activation, Two Layer,10 epochs, 6000 iteration)
 ```text
 Iteration: 500 Loss: 0.7264447212219238 Accuracy 70.01
 Iteration: 1000 Loss: 0.42540374398231506 Accuracy 86.96
