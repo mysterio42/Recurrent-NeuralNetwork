@@ -3,14 +3,14 @@
 python run.py
 ```
 ```shell
-  --batch BATCH  Training Batch size default: 100
+ --batch BATCH  Training Batch size default: 100
   --iters ITERS  Number of training iterations default: 3000
-  --lr LR        Model learning rate default: 0.001
+  --lr LR        Model learning rate default: 0.1
+  --clip CLIP    gradient clipping default: 1
   --load LOAD    True: Load trained model False: Train model default: True
-
 ```
 
-### Recurrent (ReLU Activation, One Layer)
+### Recurrent (ReLU Activation, One Layer, 5 epochs,3000 iteration)
 ```text
 Iteration: 500 Loss: 1.3418495655059814 Accuracy 40.13
 Iteration: 1000 Loss: 0.7700706720352173 Accuracy 62.19
@@ -20,7 +20,7 @@ Iteration: 2500 Loss: 0.3671818673610687 Accuracy 88.78
 Iteration: 3000 Loss: 0.3177652060985565 Accuracy 92.23
 ```
 
-### Recurrent (ReLU Activation, Two Layer)
+### Recurrent (ReLU Activation, Two Layer, 5 epochs, 3000 iteration)
 ```text
 Iteration: 500 Loss: 0.9008259773254395 Accuracy 62.98
 Iteration: 1000 Loss: 0.5199368000030518 Accuracy 78.67
@@ -30,6 +30,22 @@ Iteration: 2500 Loss: 0.2567622661590576 Accuracy 93.19
 Iteration: 3000 Loss: 0.2928905785083771 Accuracy 94.85
 ```
 
+
+### Recurrent (ReLU Activation, Two Layer,10 epochs, 6000 iteration)
+```text
+Iteration: 500 Loss: 0.9008259773254395 Accuracy 62.98
+Iteration: 1000 Loss: 0.5199368000030518 Accuracy 78.67
+Iteration: 1500 Loss: 0.5504856705665588 Accuracy 88.13
+Iteration: 2000 Loss: 0.5846810936927795 Accuracy 92.59
+Iteration: 2500 Loss: 0.2567622661590576 Accuracy 93.19
+Iteration: 3000 Loss: 0.2928905785083771 Accuracy 94.85
+Iteration: 3500 Loss: 0.0961369052529335 Accuracy 96.1
+Iteration: 4000 Loss: 0.12104305624961853 Accuracy 96.11
+Iteration: 4500 Loss: 0.16882425546646118 Accuracy 96.57
+Iteration: 5000 Loss: 0.21620489656925201 Accuracy 95.87
+Iteration: 5500 Loss: 0.15809383988380432 Accuracy 96.23
+Iteration: 6000 Loss: 0.30511119961738586 Accuracy 97.62
+```
 
 
 <!--![Figure_0.png](figures/Figure_0.png)  ![Figure_1.png](figures/Figure_1.png)-->

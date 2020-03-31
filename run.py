@@ -25,8 +25,8 @@ def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--batch', type=int,default=100,
                         help='Training  Batch size  default: 100')
-    parser.add_argument('--iters', type=int, default=3000,
-                        help='Number of training iterations  default: 3000')
+    parser.add_argument('--iters', type=int, default=6000,
+                        help='Number of training iterations  default: 6000')
     parser.add_argument('--lr', type=float,default=0.1,
                         help='Model learning rate  default: 0.1' )
     parser.add_argument('--clip', type=float, default=1,
@@ -52,6 +52,7 @@ if __name__ == '__main__':
     else:
         n_batches = int(data_size / args.batch)
         n_epochs = int(args.iters / n_batches)
+        print(n_epochs)
 
         train_ds_loader, test_ds_loader = loaders(args.batch)
 
