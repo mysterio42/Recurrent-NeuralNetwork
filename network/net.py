@@ -1,37 +1,47 @@
-import torch.nn as nn
 import torch
+import torch.nn as nn
 
 
 class Recurrent(nn.Module):
 
-    def __init__(self,in_dim,hidden_dim,layer_dim,out_dim):
+    def __init__(self, in_dim, hidden_dim, layer_dim, out_dim):
         super(Recurrent, self).__init__()
 
         self.hidden_dim = hidden_dim
 
         self.layer_dim = layer_dim
 
-        # (batch_dim,seq_dim,in_dim)
         self.rnn = nn.RNN(input_size=in_dim,
                           hidden_size=hidden_dim,
                           num_layers=layer_dim,
-                          batch_first=True,
-                          nonlinearity='tanh')
-        self.fc = nn.Linear(in_features=hidden_dim,out_features=out_dim)
+                          batch_first=False,
+                          nonlinearity='relu')
+        self.fc = nn.Linear(in_features=hidden_dim, out_features=out_dim)
 
     def forward(self, x):
-        # layer_dim batch_size hidden_dim
-        h0 = torch.zeros(self.layer_dim,x.size(0),self.hidden_dim)
+        '''
 
-        out,hn = self.rnn(x,h0)
+        :param x: x.shape                   seq_dim,batch_size,in_dim
+        :param:h0 ho.shape                  layer_dim, batch_size,hidden_dim
+        :return: RNN return shape           seq_dim,batch_size,hidden_dim
 
-        # index hidden state of last time step
-        # batch_dim=100 seq_dim=28 hidden_dim=100
-        # out.size(0)   100,28,100
-        # out[:,-1,:]   100,100
+        So, we need index hidden state of last time step
+        Q : How can I do ?
+        A : out[27,:,:]  that's it.
 
-        out = self.fc(out[:,-1,:])
-        # out.size() 100,10
+        BTW, We can simplify the expression very handy way :
+
+        N_1 Simplify   out[-1,:,:]   use slice
+
+        N_2 Simplify   out[-1,...]   use ellipsis
+        '''
+
+        h0 = torch.zeros(self.layer_dim, x.size(1), self.hidden_dim)
+
+        out, hn = self.rnn(x, h0)
+
+        out = out[-1, ...]
+
+        out = self.fc(out)
 
         return out
-

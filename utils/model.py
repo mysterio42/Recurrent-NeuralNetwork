@@ -3,8 +3,8 @@ import string
 
 import torch
 from torch.nn import CrossEntropyLoss
-from torch.optim import SGD
 from torch.nn.utils import clip_grad_norm_
+from torch.optim import SGD
 
 from utils.config import SEQ_dim, IN_dim
 from utils.data import test_ds
@@ -28,12 +28,7 @@ def train_model(model, train_ds_loader, test_ds_loader, clip, learning_rate, n_e
     for epoch in range(n_epochs):
         for i, (images, labels) in enumerate(train_ds_loader):
 
-            # images = images.view(-1, 28 * 28) # FeedForward (1,28*28)
-            # CNN (1,28,28)  doesn't need reshape
-            # Recurrent (1,28)
-
-            # batch_size, seq_dim , in_dim
-            images = images.view(-1, SEQ_dim, IN_dim)
+            images = torch.transpose(images.view(-1, SEQ_dim, IN_dim), 0, 1)
 
             optimizer.zero_grad()
 
@@ -54,7 +49,7 @@ def train_model(model, train_ds_loader, test_ds_loader, clip, learning_rate, n_e
                 total = 0
                 test_model = model.train(False)
                 for test_images, test_labels in test_ds_loader:
-                    test_images = test_images.view(-1, SEQ_dim, IN_dim)
+                    test_images = torch.transpose(test_images.view(-1, SEQ_dim, IN_dim), 0, 1)
 
                     test_logits = test_model(test_images)
 
@@ -76,7 +71,8 @@ def predict_model(model):
     test_image = test_ds[idx][0]
     label_real = test_ds[idx][1]
 
-    test_image = test_image.view(-1, SEQ_dim, IN_dim)
+    test_image = torch.transpose(test_image.view(-1, SEQ_dim, IN_dim), 0, 1)
+
     logits = model(test_image)
     _, label_predicted = torch.max(logits, 1)
 

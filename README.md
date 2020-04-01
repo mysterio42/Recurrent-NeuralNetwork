@@ -63,6 +63,21 @@ Iteration: 5500 Loss: 0.10133538395166397 Accuracy 97.14
 Iteration: 6000 Loss: 0.13402363657951355 Accuracy 97.28
 ```
 
+### Recurrent (ReLU Activation, Two Layer,10 epochs, 128 hidden, 6000 iteration)
+```
+Iteration: 500 Loss: 0.9200006723403931 Accuracy 65.84
+Iteration: 1000 Loss: 0.6433969140052795 Accuracy 80.4
+Iteration: 1500 Loss: 0.3651816248893738 Accuracy 84.88
+Iteration: 2000 Loss: 0.4467617869377136 Accuracy 92.1
+Iteration: 2500 Loss: 0.3688356876373291 Accuracy 92.43
+Iteration: 3000 Loss: 0.11550597101449966 Accuracy 95.53
+Iteration: 3500 Loss: 0.18532972037792206 Accuracy 95.61
+Iteration: 4000 Loss: 0.12741021811962128 Accuracy 96.4
+Iteration: 4500 Loss: 0.10100510716438293 Accuracy 95.96
+Iteration: 5000 Loss: 0.09450361132621765 Accuracy 97.15
+Iteration: 5500 Loss: 0.08160116523504257 Accuracy 97.28
+Iteration: 6000 Loss: 0.02370297908782959 Accuracy 96.61
+```
 <!--![Figure_0.png](figures/Figure_0.png)  ![Figure_1.png](figures/Figure_1.png)-->
 
 <!--![Figure_2.png](figures/Figure_2.png) ![Figure_3.png](figures/Figure_3.png)-->
