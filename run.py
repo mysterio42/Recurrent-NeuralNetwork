@@ -43,7 +43,7 @@ if __name__ == '__main__':
                       layer_dim=LAYER_dim,
                       out_dim=OUT_dim)
     if args.load:
-        model_name = 'model-coqqs.pkl'
+        model_name = 'model-en7q3.pkl'
         load_model(model, 'weights/{}'.format(model_name))
         while True:
             predict_model(model)

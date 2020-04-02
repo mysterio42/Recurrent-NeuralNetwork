@@ -2,11 +2,11 @@ import torchvision.transforms as transforms
 from torch.utils.data import DataLoader
 from torchvision.datasets import MNIST
 
-train_ds = MNIST(root='../data',
+train_ds = MNIST(root='data',
                  train=True,
                  transform=transforms.ToTensor(),
                  download=True)
-test_ds = MNIST(root='../data',
+test_ds = MNIST(root='data',
                 train=False,
                 transform=transforms.ToTensor(),
                 download=True)
